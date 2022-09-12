@@ -1,0 +1,24 @@
+
+query GetContinents {
+  continents {
+    code
+    name
+  }
+}
+
+query GetCountries($code: String!) {
+  countries(filter:{
+    continent: {
+      eq: $code
+    }
+  }) {
+    code
+    name
+    capital
+    emoji
+    currency
+    languages{
+      name
+    }
+  }
+}
